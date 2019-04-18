@@ -1,9 +1,7 @@
 FROM circleci/openjdk:8u171-jdk-stretch
 
-CMD apt update  
-
 # Install Imagemagick
-CMD apt-get install imagemagick
+CMD apk --update add imagemagick
 
 # Install Node, npm, and yarn
 CMD curl -sL https://deb.nodesource.com/setup_10.x | bash \
