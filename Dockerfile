@@ -76,9 +76,13 @@ RUN set -ex \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
+# ----CUSTOM-----
+
+# Install Imagemagick
+RUN apt-get install imagemagick
 
 # Install AWS CLI
-CMD apt-get install python-dev \
+RUN apt-get install python-dev \
   && apt-get install python-pip \
   && pip install awscli
   
